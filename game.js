@@ -11,6 +11,11 @@ const config = {
       debug: false
     }
   },
+  //CENTER PAGE.
+ scale: {
+ parent: game,
+ autoCenter: Phaser.Scale.CENTER_BOTH
+ },
   scene: {
     preload: preload,
     create: create,
@@ -41,7 +46,9 @@ let collect;
 let gameOver;
 let gameOverSound;
 
+
 function create() {
+  
 
   //keybord movements
   cursors = this.input.keyboard.createCursorKeys();
