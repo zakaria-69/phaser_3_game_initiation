@@ -45,7 +45,6 @@ function create() {
 
   //keybord movements
   cursors = this.input.keyboard.createCursorKeys();
-  gameOverSound = this.sound.add('game_over', { loop: false });
   //world
   this.add.image(400, 300, 'sky');
   platforms = this.physics.add.staticGroup();
@@ -85,7 +84,7 @@ function create() {
   //stars
   stars = this.physics.add.group({
     key: 'star',
-    repeat: 12,
+    repeat: 11,
     setXY: { x: 12, y: 0, stepX: 70 }
   })
   stars.children.iterate(function (child) {
@@ -108,7 +107,7 @@ function create() {
 
 function update() {
   collect = this.sound.add('collect', { loop: false });
-
+  gameOverSound = this.sound.add('game_over', { loop: false });
   //player movements
   if (cursors.left.isDown) {
     player.setVelocityX(-160);
